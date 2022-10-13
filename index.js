@@ -1,4 +1,5 @@
 const express = require('express');
+const db = require('../api_banco_persistencia/db/index');
 
 const app = express();
 
@@ -6,11 +7,6 @@ app.get('/', (req, res) =>{
     res.send('teste');
 })
 
-app.get('/buscar', (req, res) => {
-    const id = req.body.id;
-    const {
-        
-    } = req.params;
-})
+app.get('/buscar', db.buscaDados);
 
-app.listen(3000, () => console.log('Deu certo.'));
+app.listen(3000, () => console.log('http://localhost:3000/'));
