@@ -8,5 +8,6 @@ app.get('/', (req, res) =>{
 })
 
 app.get('/buscar', db.buscaDados);
+app.get('/teste', db.connectionTeste);
 
 app.listen(3000, () => console.log('http://localhost:3000/'));

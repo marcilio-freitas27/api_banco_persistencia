@@ -1,14 +1,23 @@
+// const { send } = require('express/lib/response');
 var mysql      = require('mysql');
 var conn = mysql.createConnection({
   host     : 'localhost',
   user     : 'root',
   password : '',
-  database : 'dbusuario'
+  database : 'dbbanco'
 });
+
+const connectionTeste = (req, res) => {
+  if(conn){
+    res.send('Conectado.')
+  }else {
+    res.send('Erro.')
+  }
+}
 
 // funções para banco de dados
 const buscaDados = (req, res) => {
-    conn.query('SELECT * FROM clientes', (err,result) => {
+    conn.query('SELECT * FROM correntista', (err,result) => {
       if (err) {
         throw err;
       }
@@ -16,4 +25,8 @@ const buscaDados = (req, res) => {
     });
   }
 
-  module.exports = buscaDados;
+module.exports = {
+  buscaDados,
+  connectionTeste
+}
+
