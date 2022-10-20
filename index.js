@@ -7,7 +7,12 @@ app.get('/', (req, res) =>{
     res.send('teste');
 })
 
-app.get('/buscar', db.buscaDados);
+app.get('/saldo', db.saldo);
 app.get('/teste', db.connectionTeste);
+app.get('/extrato', db.extrato);
+app.get('/deposito', db.deposito);
+app.get('/saque', db.saque);
+app.get('/transferencia', db.tranferencia);
+
 
 app.listen(3000, () => console.log('http://localhost:3000/'));

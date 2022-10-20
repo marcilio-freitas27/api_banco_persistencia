@@ -16,7 +16,7 @@ const connectionTeste = (req, res) => {
 }
 
 // funções para banco de dados
-const buscaDados = (req, res) => {
+const saldo = (req, res) => {
     conn.query('SELECT * FROM correntista', (err,result) => {
       if (err) {
         throw err;
@@ -25,8 +25,60 @@ const buscaDados = (req, res) => {
     });
   }
 
+const extrato = (req, res) => {
+    conn.query('SELECT * FROM correntista', (err,result) => {
+      if (err) {
+        throw err;
+      }
+      res.status(200).send(result );
+    });
+  }
+
+
+  const deposito = (req, res) => {
+    conn.query('SELECT * FROM correntista', (err,result) => {
+      if (err) {
+        throw err;
+      }
+      res.status(200).send(result );
+    });
+  }
+  
+const pagamento = (req, res) => {
+    conn.query('SELECT * FROM correntista', (err,result) => {
+      if (err) {
+        throw err;
+      }
+      res.status(200).send(result );
+    });
+  }
+
+  const tranferencia = (req, res) => {
+    conn.query('SELECT * FROM correntista', (err,result) => {
+      if (err) {
+        throw err;
+      }
+      res.status(200).send(result );
+    });
+  }
+
+  const saque = (req, res) => {
+    conn.query('SELECT * FROM correntista', (err,result) => {
+      if (err) {
+        throw err;
+      }
+      res.status(200).send(result );
+    });
+  }
+
+
 module.exports = {
-  buscaDados,
+  saldo,
+  extrato,
+  pagamento,
+  tranferencia,
+  deposito,
+  saque,
   connectionTeste
 }
 
